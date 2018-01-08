@@ -17,6 +17,13 @@ public class TodoService {
   @Autowired
   private TodoRepository todoRepository;
 
+  public TodoService() {
+  }
+
+  public TodoService(TodoRepository todoRepository){
+    this.todoRepository = todoRepository;
+  }
+
   public boolean saveTodo(String name, TodoPriority priority) {
     Todo todo = new Todo(name, priority);
 
